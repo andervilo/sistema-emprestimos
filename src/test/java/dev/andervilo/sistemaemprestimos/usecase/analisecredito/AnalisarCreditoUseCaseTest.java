@@ -53,7 +53,7 @@ class AnalisarCreditoUseCaseTest {
         requestDTO.setClienteId(1L);
         requestDTO.setEmprestimoId(10L);
         requestDTO.setScoreCredito(750);
-        requestDTO.setRecomendacao(RecomendacaoAnalise.APROVADO);
+        requestDTO.setRecomendacao(RecomendacaoAnalise.APROVAR);
 
         analiseCredito = new AnaliseCredito();
         analiseCredito.setId(100L);
@@ -73,7 +73,7 @@ class AnalisarCreditoUseCaseTest {
         when(analiseCreditoMapper.toResponseDTO(analiseCredito)).thenReturn(responseDTO);
 
         // Act
-        AnalisarCreditoResponseDTO result = analisarCreditoUseCase.execute(requestDTO);
+        AnaliseCreditoResponseDTO result = analisarCreditoUseCase.execute(requestDTO);
 
         // Assert
         assertNotNull(result);
@@ -99,7 +99,7 @@ class AnalisarCreditoUseCaseTest {
         when(analiseCreditoMapper.toResponseDTO(analiseCredito)).thenReturn(responseDTO);
 
         // Act
-        AnalisarCreditoResponseDTO result = analisarCreditoUseCase.execute(requestDTO);
+        AnaliseCreditoResponseDTO result = analisarCreditoUseCase.execute(requestDTO);
 
         // Assert
         assertNotNull(result);
